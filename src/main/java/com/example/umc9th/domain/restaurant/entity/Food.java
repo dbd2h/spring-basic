@@ -1,7 +1,6 @@
-package com.example.umc9th.domain.member.entity;
+package com.example.umc9th.domain.restaurant.entity;
 
 import com.example.umc9th.domain.member.entity.mapping.MemberFood;
-import com.example.umc9th.domain.member.enums.FoodName;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,10 +19,12 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    @Enumerated(EnumType.STRING)
-    private FoodName name;
+    @Column(name = "name", length = 20, nullable = false)
+    private String name;
 
     @OneToMany(mappedBy = "food")
     private List<MemberFood> memberFoodList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "food")
+    private List<Restaurant> restaurantList = new ArrayList<>();
 }
