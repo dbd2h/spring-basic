@@ -28,8 +28,8 @@ public class PointHistory extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private PointType type;
 
-    @Column(name = "description", length = 100, nullable = false)
-    private String description;
+    @Column(name = "detail", length = 100, nullable = false)
+    private String detail;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id", nullable = false)

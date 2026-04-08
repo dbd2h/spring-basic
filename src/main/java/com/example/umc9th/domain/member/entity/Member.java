@@ -80,7 +80,7 @@ public class Member extends BaseEntity {
     private List<MemberFood> memberFoodList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
-    private List<PointHistory> pointUsageList = new ArrayList<>();
+    private List<PointHistory> pointHistoryList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
     private List<MissionAccept> missionAcceptList = new ArrayList<>();

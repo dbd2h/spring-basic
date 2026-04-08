@@ -27,8 +27,8 @@ public class SpecialHours extends BaseEntity {
     @Column(name = "close_time", nullable = false)
     private LocalDate close_time;
 
-    @Column(name = "description", length = 50)
-    private String description;
+    @Column(name = "memo", length = 50)
+    private String memo;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")

@@ -1,6 +1,7 @@
 package com.example.umc9th.domain.mission.entity.mapping;
 
 import com.example.umc9th.domain.member.entity.Member;
+import com.example.umc9th.domain.member.entity.PointHistory;
 import com.example.umc9th.domain.mission.entity.Mission;
 import com.example.umc9th.global.entity.BaseEntity;
 import com.example.umc9th.global.enums.Boolean;
@@ -35,8 +36,8 @@ public class MissionAccept extends BaseEntity {
     @Builder.Default
     private Boolean is_continue = Boolean.Y;
 
-    @OneToMany(mappedBy = "mission_accept")
-    private List<MissionAccept> missionAcceptList = new ArrayList<>();
+    @OneToMany(mappedBy = "missionAccept")
+    private List<PointHistory> pointHistoryList = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member", nullable = false)
