@@ -27,7 +27,10 @@ public class Review extends BaseEntity {
     private Integer rating;
 
     @Column(name = "content", length = 500, nullable = false)
-    private String review_content;
+    private String content;
+
+    @Column(name = "answer", length = 500)
+    private String answer;
 
     @OneToMany(mappedBy = "review")
     private List<ReviewImage> reviewImageList = new ArrayList<>();
